@@ -20,79 +20,24 @@
       </header>
 
       <section class="panel controls">
-        <label>
-          OHT Count
-          <input id="ohtCount" type="number" min="1" step="1" value="2" />
-        </label>
-        <label>
-          Algorithm
-          <select id="algorithm">
-            <option value="SPT">SPT</option>
-            <option value="EDD">EDD</option>
-            <option value="FCFS">FCFS</option>
-          </select>
-        </label>
+        <label>OHT Count <input id="ohtCount" type="number" min="1" step="1" value="2" /></label>
+        <label>Algorithm <select id="algorithm"><option value="SPT">SPT</option><option value="EDD">EDD</option><option value="FCFS">FCFS</option></select></label>
         <button id="addLotButton" type="button">Add Lot</button>
       </section>
 
-      <section class="panel">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Lot</th>
-                <th>Release Time</th>
-                <th>Transport Time</th>
-                <th>Due Time</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="lotRows"></tbody>
-          </table>
-        </div>
-      </section>
-
+      <section class="panel"><div class="table-wrap"><table><thead><tr><th>Lot</th><th>Release Time</th><th>Transport Time</th><th>Due Time</th><th>Action</th></tr></thead><tbody id="lotRows"></tbody></table></div></section>
       <section id="errorBox" class="error hidden"></section>
 
       <section id="resultArea" class="hidden">
         <div id="kpiCards" class="kpi-grid"></div>
-
-        <section class="panel">
-          <div class="section-title">
-            <h2>Gantt Chart</h2>
-            <button id="exportButton" type="button">Download Excel Report</button>
-          </div>
-          <div id="gantt" class="gantt"></div>
-        </section>
-
+        <section class="panel"><div class="section-title"><h2>Gantt Chart</h2><button id="exportButton" type="button">Download Excel Report</button></div><div id="gantt" class="gantt"></div></section>
         <div class="split">
-          <section class="panel">
-            <h2>Schedule Result</h2>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Lot</th>
-                    <th>OHT</th>
-                    <th>Start</th>
-                    <th>Finish</th>
-                    <th>Due</th>
-                    <th>Tardiness</th>
-                    <th>Earliness</th>
-                  </tr>
-                </thead>
-                <tbody id="scheduleRows"></tbody>
-              </table>
-            </div>
-          </section>
-
-          <section class="panel">
-            <h2>KPI</h2>
-            <div id="kpiBars" class="bar-chart"></div>
-          </section>
+          <section class="panel"><h2>Schedule Result</h2><div class="table-wrap"><table><thead><tr><th>Lot</th><th>OHT</th><th>Start</th><th>Finish</th><th>Due</th><th>Tardiness</th><th>Earliness</th></tr></thead><tbody id="scheduleRows"></tbody></table></div></section>
+          <section class="panel"><h2>KPI</h2><div id="kpiBars" class="bar-chart"></div></section>
         </div>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
